@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>GitHub Repositories</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center text-success">GitHub Repositories</h1>
+        <div class="options mb-3">
+            <label for="username-input" class="w-100 p-3 text-success mb-4">Enter GitHub username:</label>
+            <input type="text" id="username-input" class="form-control text-success border border-success bg-dark bg-gradient" placeholder="GitHub username">
+            <label for="per-page-select" class="w-100 p-3 text-success mb-4">Repositories per page:</label>
+            <select id="per-page-select" class="form-control text-success border border-success bg-dark bg-gradient">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        <div id="loader" class="loader"></div>
+        <!-- Display user information -->
+        <div class="user-info mb-4">
+            <img id="profile-pic" class="img-thumbnail rounded-circle bg-success">
+            <p id="user-bio" class="text-success p-3"></p>
+              <!-- Display additional user details and links -->
+              <div id="user-links" class="text-success p-3"></div>
+        </div>
+        <!-- Display repositories -->
+        <div id="repositories" class="list-group"></div>
+        <nav id="pagination" aria-label="Page navigation" class="mt-4">
+            <ul class="pagination">
+                <li class="page-item ">
+                    <a class="page-link border border-dark bg-dark text-success" href="#" onclick="loadPage(currentPage - 1)"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link border border-dark bg-dark text-success" href="#" onclick="loadPage(currentPage + 1)"
+                        aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
